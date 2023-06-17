@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="icon" href="image/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="news.css">
+    <link rel="stylesheet" href="event.css">
+    <link rel="stylesheet" href="cursor.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+
+    <title>QuerySquare</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="image/blog.png" alt="SugarRush" width="200" height="100"
+                    class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="menu.html">Latest</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="news.html">News</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="event.html">Events</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact us</a>
+                        <!-- https://www.instagram.com/duke_s0nii/ -->
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Discover
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#"> Explore by Category</a></li>
+                            <li><a class="dropdown-item" href="#">Subscribe for Updates</a></li>
+                            <li><a class="dropdown-item" href="#">Explore Our Series"</a></li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Browse Archives</a></li>
+                            <li><a class="dropdown-item" href="#">Article Archive</a></li>
+                            <li><a class="dropdown-item" href="#">Content History</a></li>
+
+                        </ul>
+                    </li>
+                    <!-- <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li> -->
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Login  Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login to QuerySquare</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sign up Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Get a QuerySquare account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="cexampleInputPassword1" class="form-label">Confirm your Password</label>
+                            <input type="password" class="form-control" id="cexampleInputPassword1">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Create account</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cursor-dot-outline"></div>
+    <div class="cursor-dot"></div>
+
+    <div id="loading"></div>
+    <div id="navbar"></div>
+
+    <div class="work_page">
+
+        <div class="mywork">Popular News Articles</div>
+
+        <div class="wrapper">
+            <div class="item-bg"></div>
+
+            <div class="project-slider">
+                <div class="project-slider__wrp swiper-wrapper">
+
+                    <div class="project-slider__item swiper-slide">
+                        <a href="https://www.ndtv.com/india-news/vd-savarkars-grandson-quotes-newton-after-karnataka-drops-him-from-syllabus-4126996#trendingnow"
+                            target="_blank" class="project__item">
+                            <div class="project__title">
+                                Savarkar's Grandson Quotes Newton After Karnataka Drops Him From Syllabus
+                            </div>
+
+                            <p class="project__txt">
+                                Savarkar's Grandson Quotes Newton After Karnataka Drops Him From Syllabus
+                                Congress government in Karnataka to drop Hindutva ideologue VD Savarkar from school
+                                textbooks
+
+
+                                Panaji: The decision of the Congress government in Karnataka to drop a chapter on
+                                Hindutva ideologue VD Savarkar from school textbooks will have a reverse effect, said
+                                his grandson Ranjit Savarkar.
+                                Talking to Press Trust of India on the sidelines of an event in Goa, Ranjit Savarkar
+                                said the Congress may think that by deleting the chapter they might deprive students of
+                                the opportunity to learn about Savarkar but students are very sharp.
+
+                                "A lot of material on Savarkar is available on social media. The Savarkar Smarak has
+                                published his literature on their website. We are publishing them even in Kannada," he
+                                said.
+
+                                Ranjit Savarkar said it won't make any difference if the chapter is deleted from the
+                                syllabus.
+                            </p>
+
+                            <div class="project__img">
+                                <img src="image/sav.png" alt="project">
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="project-slider__item swiper-slide">
+                        <a href="https://www.ndtv.com/world-news/putin-says-first-russian-nuclear-weapons-delivered-to-belarus-as-planned-4127851#trendingnow"
+                            target="_blank" class="project__item">
+                            <div class="project__title">
+                                Putin Says First Russian Nuclear Weapons Delivered To Belarus As Planned
+                            </div>
+                            <p class="project__txt">
+                                President Vladimir Putin said Russia has delivered its first tactical nuclear weapons to
+                                Belarus, three months after announcing the plan that threatens to ratchet up tensions
+                                with the US and its allies over the war in Ukraine.
+                                "The first nuclear charges were delivered to the territory of Belarus. But only the
+                                first," Vladimir Putin said at the St. Petersburg International Economic Forum on
+                                Friday. "This is the first part. But by the end of the summer, by the end of the year,
+                                we will complete this work."
+
+                                President Putin Says Russia to Place Tactical Nuclear Arms in Belarus
+
+                                Vladimir Putin announced in March that Russia would base tactical nuclear weapons on the
+                                territory of its ally. He insisted Russia was meeting its non-proliferation obligations
+                                by retaining control of the weapons though it's trained Belarusian troops on the
+                                "storage and use of tactical special munitions."
+                            </p>
+                            <div class="project__img">
+                                <img src="image/putin.png" alt="project">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="project-slider__item swiper-slide">
+                        <a href="https://www.ndtv.com/india-news/apologise-to-the-nation-team-uddhav-tears-into-adipurush-makers-4128867#trendingnow"
+                            target="_blank" class="project__item">
+                            <div class="project__title">
+                                "Apologise To The Nation": Team Uddhav Shreds 'Adipurush' Makers
+                            </div>
+                            <p class="project__txt">
+                                'Apologise To The Nation': Team Uddhav Shreds 'Adipurush' Makers
+                                The mythological action film opened on Friday to a mixed reception.
+
+
+                                New Delhi: Shiv Sena (Uddhav Balasaheb Thackeray) MP Priyanka Chaturvedi on Saturday
+                                came down heavily on the makers of 'Adipurush' for allegedly using "pedestrian
+                                dialogues" in the film.
+                                Ms Chaturvedi demanded an apology from the film's makers and said that the dialogues
+                                were disrespectful to the characters of the Hindu epic Ramayana.
+
+                                "The dialogue writer of 'Adipurush' @manojmuntashir, as well as the director, should
+                                apologise to the nation for the pedestrian dialogues written for the movie, especially
+                                for Lord Hanuman," Ms Chaturvedi tweeted.
+
+                                "It hurts every Indian's sensibilities to see the kind of language being attributed to
+                                our revered gods in the name of entertainment. You make a movie on Maryada Purushottam
+                                Ram and cross all boundaries of Maryada for quick box office success is unacceptable,"
+                                she added.
+                            </p>
+                            <div class="project__img">
+                                <img src="image/adp.jpeg" alt="project">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="project-slider__item swiper-slide">
+                        <a href="https://www.ndtv.com/tamil-nadu-news/tamil-nadu-bjp-leader-sg-suryah-arrested-for-allegedly-spreading-fake-news-4128654#trendingnow"
+                            target="_blank" class="project__item">
+                            <div class="project__title">
+                                Tamil Nadu BJP Leader Arrested Over Tweet; "Highly Condemnable", Says Party
+                            </div>
+                            <p class="project__txt">
+                                Chennai: A BJP leader in Tamil Nadu was arrested on Friday for allegedly spreading fake
+                                news on social media. SG Suryah, the party's state secretary in Tamil Nadu, was arrested
+                                for a tweet alleging the death of a sanitation worker in Madurai. In the same tweet, Mr
+                                Suryah attacked Madurai MP Venkatesan for his silence.
+                                The Madurai district police have denied the incident taking place in the district.
+
+                                The BJP has condemned the arrest with the state president accusing the state government
+                                of using the police to curtail free speech.
+
+                                "The arrest of @BJP4TamilNadu State Secretary Thiru @SuryahSG avl is highly condemnable.
+                                His only mistake was to expose the nasty double standards of the communists, allies of
+                                DMK," State BJP president K Annamalai said on Twitter.
+
+                                "Using state machinery to curtail free speech & getting jittery for the slightest
+
+                                <div class="project__img">
+                                    <img src="image/tamil.jpeg" alt="project">
+                                </div>
+                        </a>
+                    </div>
+
+
+                    <div class="project-slider__item swiper-slide">
+                        <a href="https://www.ndtv.com/india-news/would-rather-jump-in-well-than-join-congress-nitin-gadkari-recounts-offer-4128650#trendingnow"
+                            target="_blank" class="project__item">
+                            <div class="project__title">
+                                Would Rather Jump In Well Than Join Congress: Nitin Gadkari Recounts Offer
+                            </div>
+                            <p class="project__txt">
+                                <p>Would Rather Jump In Well Than Join Congress: Nitin Gadkari Recounts Offer
+                                    Nitin Gadkari recalled the offer once given by late Congress leader Shrikant Jichkar
+                                    to join Congerss
+
+                                    Nagpur: Union minister and BJP veteran Nitin Gadkari has said that a politician once
+                                    offered him to join the Congress, to which he replied that he would rather die by
+                                    jumping into a well than becoming a member of that party.
+                                    Nitin Gadkari also said the Bharatiya Janata Party (BJP) government carried out
+                                    twice the amount of work in the country in the last nine years as compared to what
+                                    the Congress did in the 60 years of its rule.
+
+                                    Addressing a gathering in Maharashtra's Bhandara on Friday to mark completion of
+                                    nine years of the Narendra Modi government, Mr Gadkari recalled his initial days of
+                                    working for the BJP and talked about the party's journey.
+
+                                    He also recalled the offer once given by late Congress leader Shrikant Jichkar.
+
+                                    "Jichkar once told me - 'You are a very good party worker and leader, and if you
+                                    join the Congress, you will have a bright future'. But I told him that I would
+                                    rather jump into a well than join the Congress because I have strong faith in the
+                                    BJP and its ideology and will continue to work for it," Mr Gadkari said.</p>
+                            </p>
+                            <div class="project__img">
+                                <img src="image/nitin.jpeg" alt="project">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="project-slider__item swiper-slide">
+                        <a href="https://www.ndtv.com/world-news/rishi-sunak-faces-heat-as-boris-johnson-saga-rate-hikes-continue-4128804#trendingnow"
+                            target="_blank" class="project__item">
+                            <div class="project__title">
+                                Pressure Mounts On Rishi Sunak As Westminster Soap Opera Continues
+                            </div>
+                            <p class="project__txt">
+                                Rishi Sunak is one of life's optimists. But the Boris Johnson psychodrama and rising
+                                interest rates brought a palpable gloom to his Downing Street operation this week,
+                                according to people close to the UK prime minister.
+                                The Conservative premier styles himself on Warren Buffett and tries to stays calm by
+                                tuning out from day-to-day market movements while looking for long-term upsides. That
+                                wasn't possible this past week, according to members of the government who spoke to
+                                Bloomberg on condition of anonymity.
+
+                                That's because of a damning report that found former Tory premier Johnson deliberately
+                                and repeatedly misled Parliament over the "Partygate" scandal, against a backdrop of
+                                turmoil in the UK mortgage market as providers scrap existing deals in anticipation of
+                                interest rates going up - spelling more pain for homeowners.
+                            </p>
+                            <div class="project__img">
+                                <img src="image/rishi.webp" alt="project">
+                            </div>
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+                <div class="project-slider__ctr">
+
+                    <div class="project-slider__arrows">
+                        <button class="project-slider__arrow project-slider-prev">
+                            <span class="icon-font">
+                                <svg class="icon icon-arrow-left">
+                                    <use xlink:href="#icon-arrow-left"></use>
+                                </svg>
+                            </span>
+                        </button>
+                        <button class="project-slider__arrow project-slider-next">
+                            <span class="icon-font">
+                                <svg class="icon icon-arrow-right">
+                                    <use xlink:href="#icon-arrow-right"></use>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="project-slider__pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="learn_more">
+        <div style="margin-top: 30px; margin-bottom: 40px;" class="learn_btn">
+            <a href="https://www.ndtv.com/trends/most-popular-news" target="_blank" class="buttonLearn">Read
+                More</a>
+        </div>
+    </div>
+
+    <svg hidden="hidden">
+        <defs>
+            <symbol id="icon-arrow-left" viewBox="0 0 32 32">
+                <title>arrow-left</title>
+                <path
+                    d="M0.704 17.696l9.856 9.856c0.896 0.896 2.432 0.896 3.328 0s0.896-2.432 0-3.328l-5.792-5.856h21.568c1.312 0 2.368-1.056 2.368-2.368s-1.056-2.368-2.368-2.368h-21.568l5.824-5.824c0.896-0.896 0.896-2.432 0-3.328-0.48-0.48-1.088-0.704-1.696-0.704s-1.216 0.224-1.696 0.704l-9.824 9.824c-0.448 0.448-0.704 1.056-0.704 1.696s0.224 1.248 0.704 1.696z">
+                </path>
+            </symbol>
+            <symbol id="icon-arrow-right" viewBox="0 0 32 32">
+                <title>arrow-right</title>
+                <path
+                    d="M31.296 14.336l-9.888-9.888c-0.896-0.896-2.432-0.896-3.328 0s-0.896 2.432 0 3.328l5.824 5.856h-21.536c-1.312 0-2.368 1.056-2.368 2.368s1.056 2.368 2.368 2.368h21.568l-5.856 5.824c-0.896 0.896-0.896 2.432 0 3.328 0.48 0.48 1.088 0.704 1.696 0.704s1.216-0.224 1.696-0.704l9.824-9.824c0.448-0.448 0.704-1.056 0.704-1.696s-0.224-1.248-0.704-1.664z">
+                </path>
+            </symbol>
+        </defs>
+    </svg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- --------------footer---------------- -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Syndicated On</h3>
+                    <p>Both on Bloglovin and Alltop</p>
+                    <div class="app-logo">
+                        <img src="image/ddfvfd.png" alt="" width: 130px height="60px">
+                    </div>
+                    <br>
+                    <div class="app-logo">
+                        <img src="image/d2.png" alt="" width: 130px;>
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="image/blog.png" alt="">
+                    <p>Bheru Villas<br> Jodhpur, Rajasthan</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Home</li>
+                        <li>Category</li>
+                        <li>About</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Social</h3>
+                    <ul>
+                        <li>Instagram</li>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Linkden</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p>
+            <div class="copyrights">All rights reserved by <b> QuerySquare </b>(owner) &#169;</div>
+            </p>
+
+        </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+
+
+    <script src="cursor.js"></script>
+    <script src="event.js"></script>
+</body>
+
+</html>
